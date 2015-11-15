@@ -1,0 +1,22 @@
+name: Tricolore
+tags:
+    function:
+        Tricolore: >
+            sub {
+                my ( $ctx, $args ) = @_;
+                my $img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgAgMAAABPtQn2AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACVBMVEUAI5X////tKTkDtutPAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEwAACxMBAJqcGAAAADtJREFUaN7tyzEBAAAIA6CVtKQpLbAAHvCTFFNsEVmWZVmWZVmWZVmWZVmWZVmWZVmWZVmWZVmWZflrPrlvdDXqFZw0AAAAAElFTkSuQmCC';
+                if ( $args->{ raw } ) {
+                    return $img;
+                } else {
+                    my $width = $args->{ width } || 240;
+                    my $height = $args->{ height } || 160;
+                    my $width = $args->{ width } || 240;
+                    my $alt = $args->{ alt } || 'Tricolore';
+                    my $xhtml = $args->{ xhtml } || '';
+                    if ( $xhtml ) {
+                        $xhtml = ' /';
+                    }
+                    my $tag = "<img src=\"${img}\" alt=\"${alt}\" width=\"${width}\" height=\"${height}\"${xhtml}>";
+                    return $tag;
+                }
+            }
