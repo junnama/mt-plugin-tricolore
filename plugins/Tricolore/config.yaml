@@ -10,7 +10,6 @@ tags:
                 } else {
                     my $width = $args->{ width } || 240;
                     my $height = $args->{ height } || 160;
-                    my $width = $args->{ width } || 240;
                     my $alt = $args->{ alt } || 'Tricolore';
                     my $xhtml = $args->{ xhtml } || '';
                     if ( $xhtml ) {
